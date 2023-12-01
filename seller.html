@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background: #c16f78;
+            height:35px;
+        }
+        .container {
+            padding: 20px;
+        }
+
+        .btn-success {
+            margin-top: 20px;
+        }
+        .form-text text-muted{
+            color:#fff !important;
+        }
+        .h1, h1 {
+        font-size: 30px;
+        color: white;
+        }
+        label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        color: white;
+        }
+        .form-control{
+        width: 60%;
+        }
+       .btn-success {
+        color: #fff;
+        background-color: #83454c;
+        border-color: #d5dbd6;
+        }
+        .btn-success:hover {
+        color: #fff;
+        background-color: #e27d89;
+        border-color: #e27d89;
+        }
+        .small, small {
+            font-size: 70%;
+            color: white;
+        }
+        
+        .logo{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+       .logo img{
+        width: 30%;
+        border: 157px #1947ac;
+        border-radius: 128px;
+        }
+        .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        cursor: pointer;
+        background-color: #d07a84;
+
+        }
+       .nav-list{
+       width: 50%;
+       /*background-color: black;*/
+       display: flex;
+       /* justify-content: center; */
+       align-items: center;
+       }
+
+      .nav-list li{
+      list-style: none;
+      padding: 26px 30px;
+      }
+
+     .nav-list li a{
+
+      text-decoration: none;
+      color: white;
+      font-family: 'Ubuntu', sans-serif;
+     }
+
+     .nav-list li a:hover{
+
+     text-decoration: none;
+     color: grey;
+     }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+           <div class="logo"><img src="img/logo img.png" alt="logo"></div>
+           <li><a href="/htmlproject.html">Home</a></li>
+           <li><a href="/signup.html">features</a></li>
+           <li><a href="/form.html">Pricing</a></li>
+     </ul>
+
+        
+</nav>
+    <div class="container">
+        <h1>Welcome to Seller Registration</h1>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName">Name</label>
+                <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputAddress">Address</label>
+                <input type="text" class="form-control" id="exampleInputAddress" placeholder="Address">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
