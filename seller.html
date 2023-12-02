@@ -13,7 +13,8 @@
             height:35px;
         }
         .container {
-            padding: 20px;
+            padding: 32px;
+            margin: 96px;
         }
 
         .btn-success {
@@ -63,13 +64,16 @@
         .navbar{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         position: sticky;
         top: 0;
         cursor: pointer;
         background-color: #d07a84;
+        padding: 0px;
+        margin-left: -2px;
+        }  
 
-        }
+        
        .nav-list{
        width: 50%;
        /*background-color: black;*/
@@ -94,18 +98,39 @@
 
      text-decoration: none;
      color: grey;
+     }    
+     .col-lg-3{
+        color: #bc777f;
      }
-        
+     .container{
+        color: #83454c;
+     }
+     .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1px;
+    box-shadow: #f0f0f0;
+}
+   .pricing-card {
+    background-color: #ab5967;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    }
+    .h2{
+    color: white;
+    }
     </style>
 </head>
 <body>
     <nav class="navbar background">
         <ul class="nav-list">
-           <div class="logo"><img src="img/logo img.png" alt="logo"></div>
+           <!--<div class="logo"><img src="img/logo img.png" alt="logo"></div>-->
            <li><a href="/htmlproject.html">Home</a></li>
-           <li><a href="/signup.html">features</a></li>
-           <li><a href="/form.html">Pricing</a></li>
-     </ul>
+           <li><a href="/uploadimg.html">features</a></li>
+           <li><a href="/pricing.html">Pricing</a></li>
+        </ul>
 
         
 </nav>
@@ -132,5 +157,27 @@
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
     </div>
+    
+</body>
+<body>
+    <div class="container">
+        <div class="pricing-grid">
+            <div class="pricing-card1">
+                <h2>Register</h2>
+                <p class="price">Find all the onboarding requirements to create your account here.</p>
+                
+            </div>
+            <div class="pricing-card2">
+                <h2>Sell</h2>
+                <p class="price">Learn all about fulfilment models, platform integration & prerequisites for operational readiness here.</p>
+                
+            </div>
+            <div class="pricing-card3">
+                <h2>Earn</h2>
+                <p class="price">Get secure & timely payments on predefined days. Find out about the payment cycle.</p>
+                
+            </div>
+            
+            
 </body>
 </html>
