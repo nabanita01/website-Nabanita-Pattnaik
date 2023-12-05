@@ -74,7 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	  emailjs.send('service_ebaanco', 'template_wdrukyj', {
 		to_email: email,
 		from_name: 'Facon 4 you Registration',
-		message: 'Thank you for registering on Facon 4 you! Your account has been successfully created.'
+		message: 'Thank you for registering on Facon 4 you! Your account has been successfully created.',
+		otp:"0967"
 	  })
 		.then(function (response) {
 		  console.log('Email sent successfully:', response);
