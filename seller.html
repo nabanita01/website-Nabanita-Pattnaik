@@ -116,11 +116,48 @@
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .pricing-card2 {
+    background-color: #ab5967;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    }
+    .pricing-card3 {
+    background-color: #ab5967;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
     }
     .h2{
     color: white;
     }
+    .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.card-hghlght {
+  pointer-events: auto;
+  transform: scale(1);
+  transition: all 0.4s;
+}
+
+.card-hghlght:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.content:hover .card-hghlght:not(:hover) {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
     </style>
 </head>
 <body>
