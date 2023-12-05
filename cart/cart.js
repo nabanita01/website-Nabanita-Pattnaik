@@ -1,35 +1,57 @@
-$('.like-btn').on('click', function() {
-    $(this).toggleClass('is-active');
- });
+document.addEventListener('DOMContentLoaded', function () {
+    const incrementBtns = document.querySelectorAll('.increment-btn');
+    const decrementBtns = document.querySelectorAll('.decrement-btn');
+    const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
 
- $('.minus-btn').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var value = parseInt($input.val());
- 
-    if (value &amp,amp,gt1) {
-        value = value - 1;
-    } 
-else {
-        value = 0;
-    }
- 
-  $input.val(value);
- 
-});
+    incrementBtns.forEach(btn => {
+        btn.addEventListener('click', incrementQuantity);
+    });
 
-$('.plus-btn').on('click', function(e){
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var value = parseInt($input.val());
- 
-    if (value &amp,amp,lt, 100) {
-        value = value + 1;
-    } else {
-        value =100;
+    decrementBtns.forEach(btn => {
+        btn.addEventListener('click', decrementQuantity);
+    });
+
+    addToCartBtns.forEach(btn => {
+        btn.addEventListener('click', addToCart);
+    });
+
+    function incrementQuantity(event) {
+        const quantityElement = event.target.parentNode.querySelector('.quantity-value');
+        const currentQuantity = parseInt(quantityElement.textContent);
+        quantityElement.textContent = currentQuantity + 1;
+
+        updateTotalPrice(event.target.parentNode.parentNode);
     }
- 
-    $input.val(value);
+
+    function decrementQuantity(event) {
+        const quantityElement = event.target.parentNode.querySelector('.quantity-value');
+        const currentQuantity = parseInt(quantityElement.textContent);
+        if (currentQuantity > 1) {
+            quantityElement.textContent = currentQuantity - 1;
+            updateTotalPrice(event.target.parentNode.parentNode);
+        }
+    }
+
+    function addToCart(event) {
+        const cartItem = event.target.parentNode;
+        const quantity = parseInt(cartItem.querySelector('.quantity-value').textContent);
+        const price = parseFloat(cartItem.querySelector('.item-price').textContent.replace('Rs.', ''));
+        const totalPrice = quantity * price;
+        const productName = cartItem.querySelector('.item-name').textContent;
+        alert(`Added to cart: ${quantity} x ${productName}`);
+
+
+        // Update the total price
+        cartItem.querySelector('.total-price').textContent = totalPrice;
+
+    }
+
+    function updateTotalPrice(cartItem) {
+        const quantity = parseInt(cartItem.querySelector('.quantity-value').textContent);
+        const price = parseFloat(cartItem.querySelector('.item-price').textContent.replace('Rs.', ''));
+        const totalPrice = quantity * price;
+
+        // Update the total price
+        cartItem.querySelector('.total-price').textContent = totalPrice;
+    }
 });
