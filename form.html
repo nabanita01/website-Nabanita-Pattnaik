@@ -7,16 +7,20 @@
     <title>Document</title>
     <style>
 
-        body{
-            background-color: #9e2641;
-        }
-        .login {
+body{
+    background-color: #9e2641;
+}
+.login {
     width: 280px;
     overflow: hidden;
     margin: auto;
     padding: 80px;
-    background: #c16f78;
+    background:  rgba(193, 111, 120, 0.7);
+    transition: background-color 0.2s ease-in-out;
     border-radius: 15px;
+}
+.login:hover{
+    background-color: rgb(193, 127, 135);
 }
 form {
     display: block;
@@ -56,7 +60,7 @@ label {
     width: 300px;
     height: 30px;
     padding-left: 7px;
-    color: blue;
+    color: rgb(10, 10, 10);
     border-width: initial;
     border-style: none;
     border-color: initial;
@@ -65,7 +69,9 @@ label {
 
 }
 #log:hover{
+    color: rgb(176, 176, 176);
     cursor: pointer;
+    color: rgb(10, 10, 10);
 }
 input{
     width: 100%;
@@ -93,6 +99,23 @@ h2{
     text-align: center;
     color: rgb(237, 245, 245);
 }
+.contact {
+    text-align: center;
+}
+
+#signup-btn {
+    padding: 10px 20px; 
+    margin-top: 20px; 
+    background-color: #fdfffd; 
+    color: black; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#signup-btn:hover{
+    background-color: rgb(210, 210, 210); 
+}
+
     </style>
 </head>
 <body>
@@ -116,16 +139,16 @@ h2{
         </label>
         <input type="Password" name="Pass" id="Pass" placeholder="Password" fdprocessedid="nasnm9">
         <br><br>
-        <input type="button" name="log" id="log" value="Log In Here" fdprocessedid="ds3xbp">
-        <br><br>
+        <input type="button" name="log" id="log" value="Log In Here" fdprocessedid="ds3xbp" onclick="location.href='index.html'">
+        <br></br>
         
     </form>
 
 	<hr>
-	<section class="contact">
-	   <h2 class="text-center">ygfdg</h2>
-	   <div class="form">
-		   <input type="text" name="name" id="name" fdprocessedid="fx9ga5">
+    <section class="contact">
+        <h2 class="text-center">Don't have an account</h2>
+        <button onclick="location.href='signup.html'" id="signup-btn" fdprocessedid="fx9ga5">Sign Up</button>
+    </section>
 	   </div>
 	   <br>
 	   <br>

@@ -1,269 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>CART PAGE</title>
-<style>
-.shopping-cart {
-  width: 750px;
-  height: 423px;
-  margin: 80px auto;
-  background: #FFFFFF;
-  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
-  border-radius: 6px;
- 
-  display: flex;
-  flex-direction: column;
-}
-.title {
-  height: 60px;
-  border-bottom: 1px solid #E1E8EE;
-  padding: 20px 30px;
-  color: hwb(353 36% 12%);
-  font-size: 18px;
-  font-weight: 400;
-}
- 
-.item {
-  padding: 20px 30px;
-  height: 120px;
-  display: flex;
-}
- 
-.item:nth-child(3) {
-  border-top:  1px solid #E1E8EE;
-  border-bottom:  1px solid #E1E8EE;
-}
-.buttons {
-  position: relative;
-  padding-top: 30px;
-  margin-right: 60px;
-}
-.delete-btn,
-.like-btn {
-  display: inline-block;
-  Cursor: pointer;
-}
-.delete-btn {
-  width: 18px;
-  height: 17px;
-  background: url(&amp;quot;delete-icn.svg&amp;quot;) no-repeat center;
-}
- 
-.like-btn {
-  position: absolute;
-  top: 9px;
-  left: 15px;
-  background: url('twitter-heart.png');
-  width: 60px;
-  height: 60px;
-  background-size: 2900%;
-  background-repeat: no-repeat;
-}
-.is-active {
-  animation-name: animate;
-  animation-duration: .8s;
-  animation-iteration-count: 1;
-  animation-timing-function: steps(28);
-  animation-fill-mode: forwards;
-}
- 
-@keyframes animate {
-  0%   { background-position: left;  }
-  50%  { background-position: right; }
-  100% { background-position: right; }
-}
-.image {
-    background-color:"#f88f63";
-  margin-right: 50px;
-}
-
-.description {
-  padding-top: 10px;
-  margin-right: 60px;
-  width: 115px;
-}
- 
-.description span {
-  display: block;
-  font-size: 14px;
-  color:hwb(353 36% 12%);
-  font-weight: 400;
-}
- 
-.description span:first-child {
-  margin-bottom: 5px;
-}
-.description span:last-child {
-  font-weight: 300;
-  margin-top: 8px;
-  color: hwb(353 36% 12%);
-}
-.quantity {
-  padding-top: 20px;
-  margin-right: 60px;
-}
-.quantity input {
-  border: none;
-  text-align: center;
-  width: 32px;
-  font-size: 16px;
-  color: #000000;
-  font-weight: 300;
-}
- 
-.button[class*=btn] {
-  width: 30px;
-  height: 30px;
-  background-color: #E1E8EE;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-.minus-btn img {
-  margin-bottom: 3px;
-}
-.plus-btn img {
-  margin-top: 2px;
-}
- 
-button:focus,
-input:focus {
-  outline:0;
-}
-.total-price {
-  width: 83px;
-  padding-top: 27px;
-  text-align: center;
-  font-size: 16px;
-  color:hwb(353 36% 12%);
-  font-weight: 300;
-}
-@media (max-width: 800px) {
-  .shopping-cart {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
-  .item {
-    height: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .image img {
-    width: 50%;
-  }
-  .image,
-  .quantity,
-  .description {
-    width: 100%;
-    text-align: center;
-    margin: 6px 0;
-  }
-  .buttons {
-    margin-right: 20px;
-  }
-}
-</style>
-<script defer src="cart.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cart.css">
+  <title>Cart</title>
 </head>
-
-<body  style="background-color:#d07a84">
-<div class="shopping-cart">
-  <!-- Title -->
-  <div class="title">
-    Shopping Bag
+<body>
+  
+<div class="cart-item">
+  <img src="../img/saree1.jpg" alt="ALMAARI FASHION
+  Women Sarees">
+  <div class="item-details">
+      <p class="item-name">ALMAARI FASHION
+        Women Sarees</p>
+      <p class="item-price">Rs.7499</p>
   </div>
- 
-  <!-- Product #1 -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img src="https://i.etsystatic.com/27398764/r/il/0d973a/3621578247/il_794xN.3621578247_kj80.jpg" width="50" height="60" alt="" />
-    </div>
- 
-    <div class="description">
-      <span>Sharara</span>
-      <span>Georgette</span>
-      <span>Sky Blue</span>
-    </div>
- 
-    <div class="quantity">
-      <button class="plus-btn" type="button" name="button">
-        <img src="plus.svg" alt="" />
-      </button>
-      <input type="text" name="name" value="1">
-      <button class="minus-btn" type="button" name="button">
-        <img src="minus.svg" alt="" />
-      </button>
-    </div>
- 
-    <div class="total-price">Rs 3500/- </div>
+  <div class="quantity">
+      <button class="decrement-btn">-</button>
+      <span class="quantity-value">1</span>
+      <button class="increment-btn">+</button>
   </div>
- 
-  <!-- Product #2 -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img src="https://www.saree.com/blog/wp-content/uploads/2023/05/blog-banner.jpg" width="50" height="60 alt=""/>
-    </div>
- 
-    <div class="description">
-      <span>Sequin Saree</span>
-      <span>Sequin Material</span>
-      <span>Green</span>
-    </div>
- 
-    <div class="quantity">
-      <button class="plus-btn" type="button" name="button">
-        <img src="plus.svg" alt="" />
-      </button>
-      <input type="text" name="name" value="1">
-      <button class="minus-btn" type="button" name="button">
-        <img src="minus.svg" alt="" />
-      </button>
-    </div>
- 
-    <div class="total-price">Rs 9000/- </div>
-  </div>
- 
-  <!-- Product #3 -->
-  <div class="item">
-    <div class="buttons">
-      <span class="delete-btn"></span>
-      <span class="like-btn"></span>
-    </div>
- 
-    <div class="image">
-      <img src="https://cdn.shopify.com/s/files/1/0720/7757/products/18966_2_Three-Link-Diamond-Hoop-Earrings-for-women_1024x1024.jpeg?v=1443515989" width="50" height="60 alt="" />
-    </div>
- 
-    <div class="description">
-      <span>Earings</span>
-      <span>Americxan Diamond</span>
-      <span>White</span>
-    </div>
- 
-    <div class="quantity">
-      <button class="plus-btn" type="button" name="button">
-        <img src="plus.svg" alt="" />
-      </button>
-      <input type="text" name="name" value="1">
-      <button class="minus-btn" type="button" name="button">
-        <img src="minus.svg" alt="" />
-      </button>
-    </div>
- 
-    <div class="total-price">Rs 1699/- </div>
-  </div>
+  <button class="add-to-cart-btn">Add to Cart</button>
+  <p class="total-price">7499</p>
 </div>
+
+<div class="cart-item">
+  <img src="../img/kurti1.jpg" alt="First Resort by Ramola Bachchan
+  Women Purple & Pink Embellished V-Neck Kurti">
+  <div class="item-details">
+      <p class="item-name">First Resort by Ramola Bachchan
+        Women Purple & Pink Embellished V-Neck Kurti</p>
+      <p class="item-price">Rs.6500</p>
+  </div>
+  <div class="quantity">
+      <button class="decrement-btn">-</button>
+      <span class="quantity-value">1</span>
+      <button class="increment-btn">+</button>
+  </div>
+  <button class="add-to-cart-btn">Add to Cart</button>
+  <p class="total-price">6500</p>
+</div>
+
+<div class="cart-item">
+  <img src="../img/jhumkas.jpg" alt="
+  Samridhi DC
+  Set Of 2 Silver-Plated Oxidised Contemporary Jhumkas Earrings">
+  <div class="item-details">
+      <p class="item-name">
+        Samridhi DC
+        Set Of 2 Silver-Plated Oxidised Contemporary Jhumkas Earrings</p>
+      <p class="item-price">Rs.1999</p>
+  </div>
+  <div class="quantity">
+      <button class="decrement-btn">-</button>
+      <span class="quantity-value">1</span>
+      <button class="increment-btn">+</button>
+  </div>
+  <button class="add-to-cart-btn">Add to Cart</button>
+  <p class="total-price">1999</p>
+</div>
+
+<div class="cart-item">
+  <img src="../img/ethnic dress.jpg" alt="JUST FASHION
+  Embellished Sleeveless Georgette Pleated Maxi Ethnic Dress With Dupatta">
+  <div class="item-details">
+      <p class="item-name">JUST FASHION
+        Embellished Sleeveless Georgette Pleated Maxi Ethnic Dress With Dupatta</p>
+      <p class="item-price">Rs. 7499</p>
+  </div>
+  <div class="quantity">
+      <button class="decrement-btn">-</button>
+      <span class="quantity-value">1</span>
+      <button class="increment-btn">+</button>
+  </div>
+  <button class="add-to-cart-btn">Add to Cart</button>
+  <p class="total-price">7499</p>
+</div>
+
+<div class="cart-item">
+  <img src="../img/heels.jpg" alt="ALDO
+  Pointed Toe Stiletto Heel Pumps">
+  <div class="item-details">
+      <p class="item-name">ALDO
+        Pointed Toe Stiletto Heel Pumps</p>
+      <p class="item-price">Rs.5499</p>
+  </div>
+  <div class="quantity">
+      <button class="decrement-btn">-</button>
+      <span class="quantity-value">1</span>
+      <button class="increment-btn">+</button>
+  </div>
+  <button class="add-to-cart-btn">Add to Cart</button>
+  <p class="total-price">5400</p>
+</div>
+
+<div class="cart-item">
+  <img src="../img/hand bag.jpg" alt="TIGER MARRON
+  Geometric Embroidered Leather Structured Satchel">
+  <div class="item-details">
+      <p class="item-name">TIGER MARRON
+        Geometric Embroidered Leather Structured Satchel</p>
+      <p class="item-price">Rs.3850</p>
+  </div>
+  <div class="quantity">
+      <button class="decrement-btn">-</button>
+      <span class="quantity-value">1</span>
+      <button class="increment-btn">+</button>
+  </div>
+  <button class="add-to-cart-btn">Add to Cart</button>
+  <p class="total-price">3850</p>
+</div>
+
+<div class="cart-item">
+  <img src="../img/smrt watch.jpg" alt="CrossBeats
+  Ignite Pingg Smartwatch">
+  <div class="item-details">
+      <p class="item-name">CrossBeats
+        Ignite Pingg Smartwatch</p>
+      <p class="item-price">Rs. 6999</p>
+  </div>
+  <div class="quantity">
+      <button class="decrement-btn">-</button>
+      <span class="quantity-value">1</span>
+      <button class="increment-btn">+</button>
+  </div>
+  <button class="add-to-cart-btn">Add to Cart</button>
+  <p class="total-price">6999</p>
+</div>
+
+
+
+<script src="cart.js"></script>
 </body>
-</head>
-    
+</html>

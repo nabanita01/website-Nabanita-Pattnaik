@@ -45,32 +45,23 @@ function clearOTPs() {
     button.classList.remove("active");
 }
 
-inputs.forEach((input,index) => {
-    input.addEventListener("keyup",function(e){
-        const currentIndex = input,
-          nextInput = input.nextElementSibling,
-          prevInput = input.previousElementSibling;
-        console.log(currentIndex, nextInput, prevInput);
+inputs.forEach((input, index) => {
+    input.addEventListener("keyup", function (e) {
+        const currentInput = input,
+            nextInput = input.nextElementSibling,
+            prevInput = input.previousElementSibling;
 
         if (
-            nextInput && 
+            nextInput &&
             nextInput.hasAttribute("disabled") &&
-            currentInput.value == ""
-        ){
-            nextInput.removeAttribute("disabled",true);
+            currentInput.value !== ""
+        ) {
+            nextInput.removeAttribute("disabled");
             nextInput.focus();
-          
         }
 
-        if(prevInput.key === "Backspace"){
-            inputs.forEach((input, index1)=>{
-                if(index <= index1 && prevInput) {
-                    input.setAttribute("disabled", true);
-                    prevInput.focus();
-                    prevInput.value = "";
-                }
-
-            })
+        if (prevInput && e.key === "Backspace") {
+            prevInput.focus();
         }
 
         if (inputs[3].disabled && inputs[3].value !== "") {
@@ -82,12 +73,13 @@ inputs.forEach((input,index) => {
     });
 });
 
-window.addEventListener("load",() => {
+
+
+window.addEventListener("load", () => {
     let x = prompt("Please enter your mobile number to verify your account");
     if (x) {
-        mobile.innerText = x;
+        mobile.innerText = x;  
         generateOTPs();
-
     }
 });
 
@@ -104,3 +96,6 @@ button.addEventListener("click",()=>{
         alert("Invalid OTP! Please try again.")
     }
 });
+function redirectToIndex() {
+    window.location = 'index.html';
+}
